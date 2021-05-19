@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using LearnLeeCodeTests;
 
 namespace LearnLeeCode.Sorting.Tests
 {
@@ -11,8 +12,17 @@ namespace LearnLeeCode.Sorting.Tests
         [TestMethod()]
         public void BubbleSortTest()
         {
-            var input = new int[] { 3, 1, 4 };
+            var input = RandomList.GetRandomArray(10);
             var result = BasicSorting.BubbleSort(input);
+            RandomList.PrintRandomArray(result);
+        }
+
+        [TestMethod()]
+        public void SelectionSortTest()
+        {
+            var input = RandomList.GetRandomArray(10);
+            var result = BasicSorting.SelectionSort(input);
+            RandomList.PrintRandomArray(result);
         }
     }
 }
