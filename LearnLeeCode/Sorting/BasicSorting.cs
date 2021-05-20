@@ -41,5 +41,21 @@ namespace LearnLeeCode.Sorting
             }
             return input;
         }
+
+        public static int[] InsertionSort(int[] input)
+        {
+            for (int i = 0; i < input.Length; i++)
+            {
+                var temp = input[i];
+                var j = i;
+                while (j > 0 && input[j - 1] > temp)
+                {
+                    input[j] = input[j - 1];
+                    j--;
+                }
+                input[j] = temp;
+            }
+            return input;
+        }
     }
 }

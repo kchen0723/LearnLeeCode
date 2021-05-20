@@ -24,5 +24,13 @@ namespace LearnLeeCode.Sorting.Tests
             var result = BasicSorting.SelectionSort(input);
             RandomList.PrintRandomArray(result);
         }
+
+        [TestMethod()]
+        public void InsertionSortTest()
+        {
+            var input = RandomList.GetRandomArray(10);
+            var result = BasicSorting.InsertionSort(input);
+            RandomList.PrintRandomArray(result);
+        }
     }
 }
