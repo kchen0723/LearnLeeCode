@@ -16,5 +16,12 @@ namespace LearnLeeCode.Searching.Tests
             var input = RandomList.GetSortedRandomArray(11);
             var resultIndex = BasicSearching.BinarySearch(5, input);
         }
+
+        [TestMethod()]
+        public void ResursiveBinarySearchTest()
+        {
+            var input = RandomList.GetSortedRandomArray(11);
+            var resultIndex = BasicSearching.BinarySearch(5, input);
+        }
     }
 }
