@@ -21,6 +21,7 @@ namespace LearnLeeCode.Tree
         {
             Node<T> newNode = new Node<T>(data);
             newNode.LeftNode = target.LeftNode;
+            newNode.Parent = target;
             target.LeftNode = newNode;
             return newNode;
         }
@@ -29,6 +30,7 @@ namespace LearnLeeCode.Tree
         {
             Node<T> newNode = new Node<T>(data);
             newNode.RightNode = target.RightNode;
+            newNode.Parent = target;
             target.RightNode = newNode;
             return newNode;
         }
@@ -40,6 +42,7 @@ namespace LearnLeeCode.Tree
                 return null;
             }
             var result = target.LeftNode;
+            result.Parent = null;
             target.LeftNode = null;
             return result;
         }
@@ -51,6 +54,7 @@ namespace LearnLeeCode.Tree
                 return null;
             }
             var result = target.RightNode;
+            result.Parent = null;
             target.RightNode = null;
             return result;
         }
