@@ -17,6 +17,12 @@ namespace LearnLeeCode.Tree
 
         public Node<T> Head { get; set; }
 
+        public Node<T> Root
+        {
+            get { return Head; }
+            set { this.Head = value; }
+        }
+
         public Node<T> InsertLeft(T data, Node<T> target)
         {
             Node<T> newNode = new Node<T>(data);
@@ -92,25 +98,25 @@ namespace LearnLeeCode.Tree
             handler?.Invoke(root.Data);
         }
 
-        public void LevelOrder(Node<T> root, Action<T> handler)
+        public void LevelOrder(Action<T> handler)
         {
-            if (root == null)
+            if (Head == null)
             {
                 return;
             }
-            Queue<Node<T>> stackQueue = new Queue<Node<T>>();
-            stackQueue.Enqueue(root);
-            while (stackQueue.Count > 0)
+            Queue<Node<T>> nodeQueue = new Queue<Node<T>>();
+            nodeQueue.Enqueue(Head);
+            while (nodeQueue.Count > 0)
             {
-                var node = stackQueue.Dequeue();
+                var node = nodeQueue.Dequeue();
                 handler?.Invoke(node.Data);
                 if (node.LeftNode != null)
                 {
-                    stackQueue.Enqueue(node.LeftNode);
+                    nodeQueue.Enqueue(node.LeftNode);
                 }
                 if (node.RightNode != null)
                 {
-                    stackQueue.Enqueue(node.RightNode);
+                    nodeQueue.Enqueue(node.RightNode);
                 }
             }
         }
